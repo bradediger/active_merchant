@@ -132,7 +132,7 @@ module ActiveMerchant #:nodoc:
             xml.tag! 'n2:Version', API_VERSION
             xml.tag! 'AuthorizationID', authorization
             xml.tag! 'Amount', amount(money), 'currencyID' => options[:currency] || currency(money)
-            xml.tag! 'CompleteType', 'Complete'
+            xml.tag! 'CompleteType', options[:complete_type] || 'Complete'
             xml.tag! 'Note', options[:description]
           end
         end
